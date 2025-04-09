@@ -23,12 +23,14 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: generate changelog comment
+    - name: fetch git history
       shell: bash
       run: |
         git fetch origin ${{ github.event.pull_request.base.ref }}
         git fetch origin ${{ github.head_ref }}
-        node {{ inputs.script-name }} origin/${{ github.event.pull_request.base.ref }} origin/${{ github.head_ref }} | tee {{ inputs.filename }}
+    - name: generate changelog comment
+      shell: bash
+      run: node ${{ inputs.script-name }} origin/${{ github.event.pull_request.base.ref }} origin/${{ github.head_ref }} | tee ${{ inputs.filename }}
     - name: sticky pull request comment
       uses: marocchino/sticky-pull-request-comment@v2
       with:

@@ -4,9 +4,14 @@ Generate changelog from conventional changelog for using in a pull request comme
 
 ## Usage with Github Actions (recommended)
 
-Create a workflow with:
+Create a workflow with steps (make sure `fetch-depth` is set to enough history):
 
-```yml
+```yaml
+- name: Checkout
+  uses: actions/checkout@v4
+  with:
+    ref: "${{ github.head_ref }}"
+    fetch-depth: 100
 - name: Pull Requst Changelog
   uses: ext/pull-request-changelog@master
 ```
