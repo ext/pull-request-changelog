@@ -33,8 +33,12 @@
     "build": "node build.mjs",
     "eslint": "eslint --cache .",
     "eslint:fix": "eslint --cache --fix .",
+    "prepack": "release-prepack --bundle",
+    "postpack": "release-postpack",
+    "prepublishOnly": "release-prepublish --bundle",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
+    "postpublish": "release-postpublish",
     "self-test": "node bin/pull-request-changelog.mjs --version",
     "pretest": "npm run prettier:check && npm run eslint",
     "test": "jest"
