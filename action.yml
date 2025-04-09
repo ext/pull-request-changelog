@@ -5,7 +5,7 @@ description: >
 
 branding:
   icon: git-pull-request
-  color: grey-dark
+  color: blue
 
 inputs:
   script-name:
