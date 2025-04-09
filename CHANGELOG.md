@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.1.2 (2025-04-09)
+
+### Bug Fixes
+
+- fix missing parameters ([84ff3f5](https://github.com/ext/pull-request-changelog/commit/84ff3f57f73257de65c9cfd23c6ec159c49b77a2))
+
 ## 1.1.1 (2025-04-09)
 
 ### Bug Fixes
