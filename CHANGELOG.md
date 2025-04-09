@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.1.1 (2025-04-09)
+
+### Bug Fixes
+
+- add missing `shell` property ([9222751](https://github.com/ext/pull-request-changelog/commit/922275140de3a774046ceee4fb9a0b4b2173ae35))
+
 ## 1.1.0 (2025-04-09)
 
 ### Features
