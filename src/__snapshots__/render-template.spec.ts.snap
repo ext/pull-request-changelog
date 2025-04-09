@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render template with changelog 1`] = `
+"## CHANGELOG
+
+Based on commits in this Pull Request this will create a **minor** release and the following entries will be added to the changelog:",
+
+---
+### Features
+
+ * foo
+ * bar
+
+### Bug fixes
+
+ * baz
+
+---
+
+If this is not correct you can amend the commit message(s).
+
+"
+`;
+
+exports[`should render template with no changelog 1`] = `
+"## CHANGELOG
+
+No commits contributing to a release was found, no changelog entries will be added for this Pull Request.
+
+
+If this PR should be included in a release amend the commit message(s) to use:
+
+- \`fix:\` for a patch version or
+- \`feat:\` for minor version.
+
+"
+`;
