@@ -27,7 +27,7 @@ const output = await pullRequestChangelog({
 console.log(output);
 ```
 
-See [usage with API](#usage-with-cli) below for instruction on how to customize.
+See [usage with API](#usage-with-api) below for instruction on how to customize.
 
 ## Usage with CLI
 
