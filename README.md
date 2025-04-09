@@ -8,7 +8,7 @@ Create a workflow with:
 
 ```yml
 - name: Pull Requst Changelog
-  uses: ext/pull-request-changelog@v1.1.0
+  uses: ext/pull-request-changelog@master
 ```
 
 Create `.github/changelog.mjs`:
@@ -20,8 +20,8 @@ import { pullRequestChangelog } from "pull-request-changelog";
 const [from, to] = process.argv.slice(2);
 
 const output = await pullRequestChangelog({
-    config: await conventionalcommits(),
-    git: { from, to },
+  config: await conventionalcommits(),
+  git: { from, to },
 });
 
 console.log(output);
