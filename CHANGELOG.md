@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.1.3 (2025-04-09)
+
+### Bug Fixes
+
+- add missing default message-id ([51323b3](https://github.com/ext/pull-request-changelog/commit/51323b390e4f01fde36bb4d49a389c844414ce16))
+
 ## 1.1.2 (2025-04-09)
 
 ### Bug Fixes
