@@ -1,5 +1,15 @@
 # pull-request-changelog changelog
 
+## 1.1.0 (2025-04-09)
+
+### Features
+
+- add github action ([7d3db8b](https://github.com/ext/pull-request-changelog/commit/7d3db8b812cfd4e664a6c2021c1beefde28c3624))
+
+### Bug Fixes
+
+- typo in default template ([e91c4ff](https://github.com/ext/pull-request-changelog/commit/e91c4ff312f1d3de8beb268ea06c0dded167d009))
+
 ## 1.0.0 (2025-04-09)
 
 ### Features
