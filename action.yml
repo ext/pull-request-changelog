@@ -31,5 +31,5 @@ runs:
     - name: sticky pull request comment
       uses: marocchino/sticky-pull-request-comment@v2
       with:
-        header: {{ inputs.message-id }}
-        path: {{ inputs.filename }}
+        header: ${{ inputs.message-id }}
+        path: ${{ inputs.filename }}
