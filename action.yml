@@ -18,7 +18,8 @@ inputs:
     default: pr-changelog.md
   message-id:
     description: id passed to sticky-pull-request-commend
-    required:
+    required: false
+    default: pull-request-changelog
 
 runs:
   using: composite
