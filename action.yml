@@ -24,6 +24,7 @@ runs:
   using: composite
   steps:
     - name: generate changelog comment
+      shell: bash
       run: |
         git fetch origin ${{ github.event.pull_request.base.ref }}
         git fetch origin ${{ github.head_ref }}
