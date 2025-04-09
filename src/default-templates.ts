@@ -4,7 +4,7 @@ const defaultMessageTemplate = `{{> header }}
 
 
 {{#if changelog}}
-Based on commits in this Pull Request this will create a **{{ bump }}** release and the following entries will be added to the changelog:",
+Based on commits in this Pull Request this will create a **{{ bump }}** release and the following entries will be added to the changelog:
 
 ---
 {{ changelog }}

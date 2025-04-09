@@ -3,7 +3,7 @@
 exports[`should render template with changelog 1`] = `
 "## CHANGELOG
 
-Based on commits in this Pull Request this will create a **minor** release and the following entries will be added to the changelog:",
+Based on commits in this Pull Request this will create a **minor** release and the following entries will be added to the changelog:
 
 ---
 ### Features
