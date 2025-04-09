@@ -2,7 +2,34 @@
 
 Generate changelog from conventional changelog for using in a pull request comment.
 
-## Usage with CLI (recommended)
+## Usage with Github Actions (recommended)
+
+Create a workflow with:
+
+```yml
+- name: Pull Requst Changelog
+  uses: ext/pull-request-changelog@v1.1.0
+```
+
+Create `.github/changelog.mjs`:
+
+```ts
+import conventionalcommits from "conventional-changelog-conventionalcommits";
+import { pullRequestChangelog } from "pull-request-changelog";
+
+const [from, to] = process.argv.slice(2);
+
+const output = await pullRequestChangelog({
+    config: await conventionalcommits(),
+    git: { from, to },
+});
+
+console.log(output);
+```
+
+See [usage with API](#usage-with-cli) below for instruction on how to customize.
+
+## Usage with CLI
 
 ```bash
 npx pull-request-changelog \
