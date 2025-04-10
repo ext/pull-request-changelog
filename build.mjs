@@ -24,7 +24,7 @@ async function updateReadme() {
 	const paramTable = dedent`
 		<!-- prettier-ignore -->
 		Input&nbsp;parameter | Default | Description
-		--- | ---
+		--- | --- | ---
 		${Object.entries(action.inputs).map(formatParam).join("\n")}
 	`;
 
@@ -44,6 +44,7 @@ async function updateReadme() {
 	if (readme !== updated) {
 		if (isCI) {
 			console.error("README.md not up-to-date, run build locally and add changes");
+			process.exitCode = 1;
 		} else {
 			await fs.writeFile("README.md", updated, "utf-8");
 		}
