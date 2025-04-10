@@ -11,10 +11,10 @@ export async function updateTags(env, cwd, version) {
 	const major = `v${parsed.major}`;
 	const minor = `v${parsed.major}.${parsed.minor}`;
 	const tags = await getTags(env, cwd);
-	if (tags.include(major)) {
+	if (tags.includes(major)) {
 		await spawn("git", ["push", `:${major}`], { env, cwd });
 	}
-	if (tags.include(minor)) {
+	if (tags.includes(minor)) {
 		await spawn("git", ["push", `:${major}`], { env, cwd });
 	}
 	await spawn("git", ["push", `${version}:${major}`], { env, cwd });
