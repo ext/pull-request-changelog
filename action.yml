@@ -34,7 +34,7 @@ inputs:
     default: 100
   version:
     description: NPM script version (passed to npx)
-    default: 1.1.3
+    default: 1.2.0
 
 outputs:
   message:

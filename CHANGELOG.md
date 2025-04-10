@@ -1,5 +1,13 @@
 # pull-request-changelog changelog
 
+## 1.2.0 (2025-04-10)
+
+### Features
+
+- add `--config` ([5a3a144](https://github.com/ext/pull-request-changelog/commit/5a3a1442203b7007a715f156d9444ee86d3ef935))
+- add `--output` ([5c22d05](https://github.com/ext/pull-request-changelog/commit/5c22d058d8443da93fe41006fdecb6e2d5355f4a))
+- add `--template-dir` ([9457ea9](https://github.com/ext/pull-request-changelog/commit/9457ea9555061fa2bff6575d780df262d7c1d883))
+
 ## 1.1.3 (2025-04-09)
 
 ### Bug Fixes
