@@ -1,5 +1,12 @@
 # pull-request-changelog changelog
 
+## 1.2.3 (2025-04-10)
+
+### Bug Fixes
+
+- add missing config and preset parameters ([69ee3ba](https://github.com/ext/pull-request-changelog/commit/69ee3ba1e8e1dfb6426448aca3fcb0ea91ff2c3d))
+- typo in comment condition ([04539f7](https://github.com/ext/pull-request-changelog/commit/04539f7df45694be075714f34ec24449f3071254))
+
 ## 1.2.2 (2025-04-10)
 
 ### Bug Fixes

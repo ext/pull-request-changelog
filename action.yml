@@ -34,7 +34,7 @@ inputs:
     default: 100
   version:
     description: NPM script version (passed to npx). Default is to use same script version as action version.
-    default: 1.2.2
+    default: 1.2.3
 
 outputs:
   message:
@@ -47,11 +47,15 @@ runs:
     - name: fetch git history
       id: history
       shell: bash
-      run: git fetch --depth ${{ inputs.fetch-depth }} origin ${{ github.event.pull_request.base.ref }} ${{ github.head_ref }}
+      run:
+        git fetch --depth ${{ inputs.fetch-depth }} origin ${{ github.event.pull_request.base.ref }}
+        ${{ github.head_ref }}
     - name: git log
       id: log
       shell: bash
-      run: git log --oneline origin/${{ github.head_ref }}...origin/${{ github.event.pull_request.base.ref }}
+      run:
+        git log --oneline origin/${{ github.head_ref }}...origin/${{ github.event.pull_request.base.ref
+        }}
     - name: generate changelog comment
       id: generate
       shell: bash

@@ -1,6 +1,6 @@
 {
   "name": "pull-request-changelog",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Generate changelog from conventional changelog for using in a pull request comment.",
   "keywords": [
     "conventional-changelog",
