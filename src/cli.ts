@@ -1,6 +1,39 @@
 import path from "node:path";
+import { pathToFileURL } from "node:url";
+import { moduleResolve } from "import-meta-resolve";
 import meow from "meow";
 import { type PullRequestChangelogOptions, pullRequestChangelog } from "./pull-request-changelog";
+
+interface ConfigModule {
+	default(
+		this: void,
+	): PullRequestChangelogOptions["config"] | Promise<PullRequestChangelogOptions["config"]>;
+}
+
+async function getConfig(
+	cwd: string,
+	flags: { preset: string | undefined; config: string | undefined },
+): Promise<PullRequestChangelogOptions["config"]> {
+	const { preset, config } = flags;
+	if (config) {
+		const fullpath = path.join(cwd, config);
+		const { default: configFactory } = (await import(fullpath)) as ConfigModule;
+		return await configFactory();
+	}
+	if (preset) {
+		const base = pathToFileURL(path.join(cwd, "noop.js"));
+		const modulePath = moduleResolve(preset, base, new Set(["node", "import"]));
+		const { default: configFactory } = (await import(
+			modulePath as unknown as string
+		)) as ConfigModule;
+		return await configFactory();
+	}
+	return {
+		whatBump() {
+			return { level: 2 };
+		},
+	};
+}
 
 export async function cli(cwd: string, argv: string[]): Promise<void> {
 	const cli = meow(
@@ -11,7 +44,8 @@ Usage
 Options
   --from, -f    Base branch/ref
   --to, -t      Pull request branch/ref (default: HEAD)
-  --preset, -p  Conventional Changelog preset
+  --preset, -p  Conventional Changelog preset (NPM package)
+  --config, -c  Conventional Changelog config (filename)
 
 Other
   --help      Show usage
@@ -35,22 +69,16 @@ Other
 				preset: {
 					type: "string",
 					shortFlag: "p",
-					isRequired: true,
+				},
+				config: {
+					type: "string",
+					shortFlag: "c",
 				},
 			},
 		},
 	);
 
-	const moduleName = cli.flags.preset.startsWith(".")
-		? path.join(cwd, cli.flags.preset)
-		: cli.flags.preset;
-	const { default: presetFactory } = (await import(moduleName)) as {
-		default(
-			this: void,
-		): PullRequestChangelogOptions["config"] | Promise<PullRequestChangelogOptions["config"]>;
-	};
-	const config = await presetFactory();
-
+	const config = await getConfig(cwd, cli.flags);
 	const output = await pullRequestChangelog({
 		config,
 		git: {

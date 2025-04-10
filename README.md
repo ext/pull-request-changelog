@@ -45,22 +45,22 @@ npx pull-request-changelog \
 
 Do note that the full name of the preset must be specified, this is different to how `conventional-changelog-cli` handles `-p`.
 
-If you need to customize the configuration for the conventional-changelog preset create a new file default exporting a function wrapping the preset:
+If you need to customize the configuration for the conventional-changelog preset create a new file default exporting a function wrapping the preset and use `--config` instead:
 
 ```ts
 import conventionalChangelogConventionalcommits from "conventionallchangelog-conventionalcommits";
 
-export default function () {
+export default () => {
   return conventionalChangelogConventionalcommits({
     /* preset configuration */
   });
-}
+};
 ```
 
 ```diff
  npx pull-request-changelog \
 -  --preset conventional-changelog-conventionalcommits \
-+  --preset ./my-config.mjs \
++  --config my-config.mjs \
    --from origin/main \
    --to HEAD
 ```
