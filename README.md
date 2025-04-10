@@ -25,7 +25,7 @@ Create a workflow with these steps:
   with:
     node-version: 22.x
 - name: Pull Requst Changelog
-  uses: ext/pull-request-changelog@master
+  uses: ext/pull-request-changelog@v1
 ```
 
 > [!NOTE]
