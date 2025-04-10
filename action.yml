@@ -57,6 +57,8 @@ runs:
         npx -y pull-request-changelog@${{ inputs.version }} \
           --from origin/${{ github.event.pull_request.base.ref }} \
           --to origin/${{ github.head_ref }} \
+          --config "${{ inputs.config }}" \
+          --preset "${{ inputs.preset }}" \
           --template-dir "${{ inputs.template-dir }}" \
           --output "${{ inputs.filename }}"
         cat ${{ inputs.filename }}
