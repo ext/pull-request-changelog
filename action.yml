@@ -60,7 +60,11 @@ runs:
           --template-dir "${{ inputs.template-dir }}" \
           --output "${{ inputs.filename }}"
         cat ${{ inputs.filename }}
-        echo "message=$(cat ${{ inputs.filename }})" >> $GITHUB_OUTPUT
+        {
+          echo 'message<<EOF'
+          cat ${{ inputs.filename }}
+          echo EOF
+        } >> "$GITHUB_OUTPUT"
     - name: sticky pull request comment
       id: comment
       uses: marocchino/sticky-pull-request-comment@v2
