@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.2.2 (2025-04-10)
+
+### Bug Fixes
+
+- fix github action message output ([19c4532](https://github.com/ext/pull-request-changelog/commit/19c45327a8b798998d3ef6091bc1d658ed45213a))
+
 ## 1.2.1 (2025-04-10)
 
 ### Bug Fixes
