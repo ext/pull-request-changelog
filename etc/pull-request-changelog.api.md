@@ -30,7 +30,7 @@ export interface PullRequestChangelogOptions {
         message?: string;
         header?: string;
         footer?: string;
-    };
+    } | undefined;
     // (undocumented)
     title?: string;
 }

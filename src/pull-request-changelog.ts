@@ -20,11 +20,13 @@ export interface PullRequestChangelogOptions {
 		to: string;
 	};
 	title?: string;
-	template?: {
-		message?: string;
-		header?: string;
-		footer?: string;
-	};
+	template?:
+		| {
+				message?: string;
+				header?: string;
+				footer?: string;
+		  }
+		| undefined;
 }
 
 const release = ["major", "minor", "patch"] as const;

@@ -1,3 +1,5 @@
+import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { moduleResolve } from "import-meta-resolve";
@@ -35,6 +37,31 @@ async function getConfig(
 	};
 }
 
+async function getTemplates(
+	cwd: string,
+	flags: { templateDir: string | undefined },
+): Promise<PullRequestChangelogOptions["template"]> {
+	const { templateDir } = flags;
+	if (!templateDir || templateDir === "") {
+		return {};
+	}
+
+	const template: PullRequestChangelogOptions["template"] = {};
+	const filepaths = {
+		message: path.join(cwd, templateDir, "message.hbs"),
+		header: path.join(cwd, templateDir, "header.hbs"),
+		footer: path.join(cwd, templateDir, "footer.hbs"),
+	} as const;
+	for (const name of ["message", "header", "footer"] as const) {
+		const filepath = filepaths[name];
+		if (existsSync(filepath)) {
+			template[name] = await fs.readFile(filepath, "utf-8");
+		}
+	}
+
+	return template;
+}
+
 export async function cli(cwd: string, argv: string[]): Promise<void> {
 	const cli = meow(
 		`
@@ -42,14 +69,21 @@ Usage
   $ npx pull-request-changelog -f origin/main
 
 Options
-  --from, -f    Base branch/ref
-  --to, -t      Pull request branch/ref (default: HEAD)
-  --preset, -p  Conventional Changelog preset (NPM package)
-  --config, -c  Conventional Changelog config (filename)
+  --from, -f          Base branch/ref
+  --to, -t            Pull request branch/ref (default: HEAD)
+  --preset, -p        Conventional Changelog preset (NPM package)
+  --config, -c        Conventional Changelog config (filename)
+  --template-dir, -T  Template directory
 
 Other
   --help      Show usage
   --version   Show version
+
+The template directory may contain the files:
+
+- message.hbs for the main template
+- header.hbs for the header partial
+- footer.hbs for the footer partial
 
 `,
 		{
@@ -74,17 +108,23 @@ Other
 					type: "string",
 					shortFlag: "c",
 				},
+				templateDir: {
+					type: "string",
+					shortFlag: "T",
+				},
 			},
 		},
 	);
 
 	const config = await getConfig(cwd, cli.flags);
+	const template = await getTemplates(cwd, cli.flags);
 	const output = await pullRequestChangelog({
 		config,
 		git: {
 			from: cli.flags.from,
 			to: cli.flags.to,
 		},
+		template,
 	});
 
 	/* eslint-disable-next-line no-console -- expected to log */
