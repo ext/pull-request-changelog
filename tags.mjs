@@ -21,7 +21,7 @@ export async function updateTags(env, cwd, version) {
 	await spawn("git", ["push", `${version}:${minor}`], { env, cwd });
 }
 
-export async function publush(_pluginConfig, context) {
+export async function publish(_pluginConfig, context) {
 	const { nextRelease, logger, env, cwd } = context;
 	logger.log(`Updating git tags`);
 	await updateTags(env, cwd, nextRelease.version);
