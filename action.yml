@@ -24,7 +24,7 @@ inputs:
   comment:
     description:
     required: false
-    default: "true"
+    default: true
   comment-id:
     description: id passed to sticky-pull-request-commend
     required: false
@@ -63,7 +63,7 @@ runs:
     - name: sticky pull request comment
       id: comment
       uses: marocchino/sticky-pull-request-comment@v2
-      if: (inputs.comment == 'true' || inputs.comment == true)
+      if: inputs.comment == true
       with:
         header: ${{ inputs.message-id }}
         path: ${{ inputs.filename }}
