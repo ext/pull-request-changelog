@@ -47,9 +47,11 @@ runs:
     - name: fetch git history
       id: history
       shell: bash
-      run: |
-        git fetch --depth ${{ inputs.fetch-depth }} origin ${{ github.event.pull_request.base.ref }}
-        git fetch --depth ${{ inputs.fetch-depth }} origin ${{ github.head_ref }}
+      run: git fetch --depth ${{ inputs.fetch-depth }} origin ${{ github.event.pull_request.base.ref }} ${{ github.head_ref }}
+    - name: git log
+      id: log
+      shell: bash
+      run: git log --oneline origin/${{ github.head_ref }}...origin/${{ github.event.pull_request.base.ref }}
     - name: generate changelog comment
       id: generate
       shell: bash
