@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.3.0 (2025-04-10)
+
+### Features
+
+- add major minor tags for use with github actions ([50fd5d2](https://github.com/ext/pull-request-changelog/commit/50fd5d2fd71805e46d554c8ab006bd9daf54c431))
+
 ## 1.2.4 (2025-04-10)
 
 ### Bug Fixes

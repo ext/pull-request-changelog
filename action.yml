@@ -34,7 +34,7 @@ inputs:
     default: 100
   version:
     description: NPM script version (passed to npx). Default is to use same script version as action version.
-    default: 1.2.4
+    default: 1.3.0
 
 outputs:
   message:
