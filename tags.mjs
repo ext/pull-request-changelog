@@ -6,23 +6,28 @@ async function getTags(env, cwd) {
 	return tags.split("\n");
 }
 
-export async function updateTags(env, cwd, version) {
+export async function updateTags(context, version) {
+	const { cwd, env, logger } = context;
 	const parsed = parse(version);
+	const current = `v${version}`;
 	const major = `v${parsed.major}`;
 	const minor = `v${parsed.major}.${parsed.minor}`;
 	const tags = await getTags(env, cwd);
+	const options = { env, cwd, stdout: "inherit", stderr: "inherit" };
+	logger.log(`Updating git tags`);
+	logger.log(`  ${current} -> ${major}`);
+	logger.log(`  ${current} -> ${minor}`);
 	if (tags.includes(major)) {
-		await spawn("git", ["push", `:${major}`], { env, cwd });
+		await spawn("git", ["push", "origin", `:${major}`], options);
 	}
 	if (tags.includes(minor)) {
-		await spawn("git", ["push", `:${major}`], { env, cwd });
+		await spawn("git", ["push", "origin", `:${major}`], options);
 	}
-	await spawn("git", ["push", `${version}:${major}`], { env, cwd });
-	await spawn("git", ["push", `${version}:${minor}`], { env, cwd });
+	await spawn("git", ["push", "origin", `${current}:${major}`], options);
+	await spawn("git", ["push", "origin", `${current}:${minor}`], options);
 }
 
 export async function publish(_pluginConfig, context) {
-	const { nextRelease, logger, env, cwd } = context;
-	logger.log(`Updating git tags`);
-	await updateTags(env, cwd, nextRelease.version);
+	const { nextRelease } = context;
+	await updateTags(context, nextRelease.version);
 }
