@@ -73,6 +73,7 @@ Options
   --to, -t            Pull request branch/ref (default: HEAD)
   --preset, -p        Conventional Changelog preset (NPM package)
   --config, -c        Conventional Changelog config (filename)
+  --output, -o        Output file (default stdout)
   --template-dir, -T  Template directory
 
 Other
@@ -108,6 +109,11 @@ The template directory may contain the files:
 					type: "string",
 					shortFlag: "c",
 				},
+				output: {
+					type: "string",
+					shortFlag: "o",
+					default: "/dev/stdout",
+				},
 				templateDir: {
 					type: "string",
 					shortFlag: "T",
@@ -127,6 +133,6 @@ The template directory may contain the files:
 		template,
 	});
 
-	/* eslint-disable-next-line no-console -- expected to log */
-	console.log(output);
+	const { output: dst } = cli.flags;
+	await fs.writeFile(dst, output, "utf-8");
 }
