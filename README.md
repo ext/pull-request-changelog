@@ -18,6 +18,8 @@ Create a workflow with these steps:
 ```yaml
 - name: Checkout
   uses: actions/checkout@v4
+  with:
+    ref: "${{ github.head_ref }}"
 - name: Setup Node.js
   uses: actions/setup-node@v4
   with:
