@@ -5,6 +5,8 @@ import isCI from "is-ci";
 
 const pkg = JSON.parse(await fs.readFile("package.json", "utf-8"));
 
+await fs.rm("dist", { recursive: true, force: true });
+
 const esbuildResult = await build({
 	entryPoints: ["src/index.ts", "src/cli.ts"],
 	outdir: "dist",
