@@ -78,5 +78,5 @@ runs:
       uses: marocchino/sticky-pull-request-comment@v2
       if: (inputs.comment == 'true' || inputs.comment == true)
       with:
-        header: ${{ inputs.message-id }}
+        header: ${{ inputs.comment-id }}
         path: ${{ inputs.filename }}
