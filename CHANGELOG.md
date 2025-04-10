@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.2.4 (2025-04-10)
+
+### Bug Fixes
+
+- fix another typo ([25c1b73](https://github.com/ext/pull-request-changelog/commit/25c1b732684d2d04d16c3dd8061171860662c2ea))
+
 ## 1.2.3 (2025-04-10)
 
 ### Bug Fixes
