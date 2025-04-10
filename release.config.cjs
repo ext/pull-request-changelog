@@ -21,6 +21,7 @@ const plugins = [
 			assets: ["CHANGELOG.md", "actions.yml", "package.json", "package-lock.json"],
 		},
 	],
+	["./tags.mjs"],
 ];
 
 module.exports = { branches, plugins };
