@@ -1,6 +1,6 @@
 name: Pull Requst Changelog
 author: David Sveningsson
-description: >
+description: |
   Generate changelog from conventional changelog for using in a pull request comment.
 
 branding:
@@ -12,7 +12,7 @@ inputs:
     description: full name of an NPM package with a conventional changelog preset
     required: false
   config:
-    description: path to a configuration file exporting a conventional changelog configuration
+    description: path to a configuration file exporting a configuration
     required: false
   template-dir:
     description: directory with templates
@@ -22,7 +22,7 @@ inputs:
     required: false
     default: pr-changelog.md
   comment:
-    description:
+    description: If `true` a sticky comment will be added with the changelog.
     required: false
     default: true
   comment-id:
@@ -38,7 +38,7 @@ inputs:
 
 outputs:
   message:
-    description: "Changelog message"
+    description: Changelog message
     value: ${{ steps.generate.outputs.message }}
 
 runs:

@@ -7,13 +7,20 @@ const git = require("@html-validate/semantic-release-config/lib/git");
 const branches = require("@html-validate/semantic-release-config/lib/branches");
 
 const plugins = [
+	["./update-version.mjs"],
 	["@semantic-release/commit-analyzer", commitAnalyzer],
 	["@semantic-release/release-notes-generator", releaseNotesGenerator],
 	["@semantic-release/npm", npm],
 	["@semantic-release/github", {}],
 	["@semantic-release/changelog", changelog],
 	["@semantic-release/exec", exec],
-	["@semantic-release/git", git],
+	[
+		"@semantic-release/git",
+		{
+			...git,
+			assets: ["CHANGELOG.md", "actions.yml", "package.json", "package-lock.json"],
+		},
+	],
 ];
 
 module.exports = { branches, plugins };
