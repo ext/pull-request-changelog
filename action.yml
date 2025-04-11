@@ -51,12 +51,17 @@ runs:
         git fetch --depth ${{ inputs.fetch-depth }} origin \
           ${{ github.event.pull_request.base.ref }} \
           ${{ github.head_ref }}
+    - name: determine merge info
+      id: merge-info
+      shell: bash
+      run: |
+        echo "base=$(git merge-base origin/${{ github.head_ref }} origin/${{ github.event.pull_request.base.ref }})" >> $GITHUB_OUTPUT
+        echo "head=origin/${{ github.head_ref }}" >> $GITHUB_OUTPUT
     - name: git log
       id: log
       shell: bash
       run: |
-        git log --oneline \
-          origin/${{ github.head_ref }}...origin/${{ github.event.pull_request.base.ref}}
+        git log --oneline ${{ steps.merge-info.outputs.head }}...${{ steps.merge-info.outputs.base }}
     - name: determine cli binary to run
       id: binary
       shell: bash
@@ -73,8 +78,8 @@ runs:
       shell: bash
       run: |
         ${{ steps.binary.outputs.cmd }} \
-          --from origin/${{ github.event.pull_request.base.ref }} \
-          --to origin/${{ github.head_ref }} \
+          --from ${{ steps.merge-info.outputs.base }} \
+          --to ${{ steps.merge-info.outputs.head }} \
           --config "${{ inputs.config }}" \
           --preset "${{ inputs.preset }}" \
           --template-dir "${{ inputs.template-dir }}" \
