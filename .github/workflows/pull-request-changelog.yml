@@ -20,6 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Pull Requst Changelog
-        uses: ext/pull-request-changelog@main
+        uses: ./action.yml
         with:
           preset: conventional-changelog-conventionalcommits
+          internal-cmd: node bin/pull-request-changelog.mjs

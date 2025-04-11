@@ -15,6 +15,9 @@ async function updateReadme() {
 	action.inputs.version.default = "auto";
 
 	function formatParam([name, param]) {
+		if (name.startsWith("internal-")) {
+			return "";
+		}
 		return `${name} | ${param.default ? JSON.stringify(param.default) : ""} | ${param.description}`;
 	}
 
@@ -25,7 +28,7 @@ async function updateReadme() {
 		<!-- prettier-ignore -->
 		Input&nbsp;parameter | Default | Description
 		--- | --- | ---
-		${Object.entries(action.inputs).map(formatParam).join("\n")}
+		${Object.entries(action.inputs).map(formatParam).filter(Boolean).join("\n")}
 	`;
 
 	const usagePreamble = "<!-- CLI USAGE BEGIN -->";

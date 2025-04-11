@@ -35,6 +35,8 @@ inputs:
   version:
     description: NPM script version (passed to npx). Default is to use same script version as action version.
     default: 1.3.0
+  internal-cmd:
+    default: npx -y pull-request-changelog@${{ inputs.version }}
 
 outputs:
   message:
@@ -62,22 +64,11 @@ runs:
       shell: bash
       run: |
         git log --oneline ${{ steps.merge-info.outputs.head }}...${{ steps.merge-info.outputs.base }}
-    - name: determine cli binary to run
-      id: binary
-      shell: bash
-      run: |
-        if [[ -e dist/cli.js ]]; then
-          echo "Using local binary from dist/cli.js"
-          echo "cmd=node bin/pull-request-changelog.mjs" >> $GITHUB_OUTPUT
-        else
-          echo "Using npx to execute binary from NPM registry"
-          echo "cmd=npx -y pull-request-changelog@${{ inputs.version }}" >> $GITHUB_OUTPUT
-        fi
     - name: generate changelog comment
       id: generate
       shell: bash
       run: |
-        ${{ steps.binary.outputs.cmd }} \
+        ${{ inputs.internal-cmd }} \
           --from ${{ steps.merge-info.outputs.base }} \
           --to ${{ steps.merge-info.outputs.head }} \
           --config "${{ inputs.config }}" \
