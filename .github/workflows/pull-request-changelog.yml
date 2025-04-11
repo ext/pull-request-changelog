@@ -23,4 +23,3 @@ jobs:
         uses: ./
         with:
           preset: conventional-changelog-conventionalcommits
-          internal-cmd: node bin/pull-request-changelog.mjs
