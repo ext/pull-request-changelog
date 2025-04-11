@@ -35,6 +35,9 @@ inputs:
   version:
     description: NPM script version (passed to npx). Default is to use same script version as action version.
     default: 1.3.0
+  skip-install:
+    description: Skip installing NPM package (you need to manually ensure the package exists)
+    default: false
 
 outputs:
   message:
@@ -62,11 +65,15 @@ runs:
       shell: bash
       run: |
         git log --oneline ${{ steps.merge-info.outputs.head }}...${{ steps.merge-info.outputs.base }}
+    - name: install pull-reqeust-changelog
+      if: (inputs.skip-install == 'false' || inputs.skip-install == false)
+      shell: bash
+      run: npm install -g pull-request-changelog@${{ inputs.version }}
     - name: generate changelog comment
       id: generate
       shell: bash
       run: |
-        npx -y pull-request-changelog@${{ inputs.version }} \
+        pull-request-changelog \
           --from ${{ steps.merge-info.outputs.base }} \
           --to ${{ steps.merge-info.outputs.head }} \
           --config "${{ inputs.config }}" \

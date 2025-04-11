@@ -49,6 +49,7 @@ comment | true | If `true` a sticky comment will be added with the changelog.
 comment-id | "pull-request-changelog" | id passed to sticky-pull-request-commend
 fetch-depth | 100 | git commit depth
 version | "auto" | NPM script version (passed to npx). Default is to use same script version as action version.
+skip-install |  | Skip installing NPM package (you need to manually ensure the package exists)
 
 <!-- ACTION INPUTS END -->
 
