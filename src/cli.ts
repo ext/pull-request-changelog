@@ -68,6 +68,8 @@ export async function cli(cwd: string, argv: string[]): Promise<void> {
 Usage
   $ npx pull-request-changelog -f origin/main
 
+asdf
+
 Options
   --from, -f          Base branch/ref
   --to, -t            Pull request branch/ref (default: HEAD)

@@ -71,6 +71,8 @@ Generate changelog from conventional changelog for using in a pull request comme
 Usage
   $ npx pull-request-changelog -f origin/main
 
+asdf
+
 Options
   --from, -f          Base branch/ref
   --to, -t            Pull request branch/ref (default: HEAD)
