@@ -20,7 +20,10 @@ jobs:
       - name: Build
         run: npm run build
       - name: Asdf
-        run: npx pull-request-changelog --help
+        run: |
+          pwd
+          ls -l
+          npx pull-request-changelog --help
       - name: Pull Requst Changelog
         uses: ext/pull-request-changelog@main
         with:
