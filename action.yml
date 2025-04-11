@@ -60,6 +60,8 @@ runs:
     - name: asdf
       shell: bash
       run: |
+        pwd
+        ls -l
         npx -y pull-request-changelog@${{ inputs.version }} --help
     - name: generate changelog comment
       id: generate
