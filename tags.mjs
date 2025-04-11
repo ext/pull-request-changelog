@@ -18,10 +18,10 @@ export async function updateTags(context, version) {
 	logger.log(`  ${current} -> ${major}`);
 	logger.log(`  ${current} -> ${minor}`);
 	if (tags.includes(major)) {
-		await spawn("git", ["push", "origin", `:${major}`], options);
+		await spawn("git", ["push", "origin", `:refs/tags/${major}`], options);
 	}
 	if (tags.includes(minor)) {
-		await spawn("git", ["push", "origin", `:${major}`], options);
+		await spawn("git", ["push", "origin", `:refs/tags/${minor}`], options);
 	}
 	await spawn("git", ["push", "origin", `${current}:${major}`], options);
 	await spawn("git", ["push", "origin", `${current}:${minor}`], options);
