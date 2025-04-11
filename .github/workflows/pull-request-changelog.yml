@@ -1,0 +1,25 @@
+name: Pull Request Changelog
+
+on: [pull_request]
+
+jobs:
+  pr-changelog:
+    runs-on: ubuntu-latest
+    name: Pull Request Changelog
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: "${{ github.head_ref }}"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Pull Requst Changelog
+        uses: ext/pull-request-changelog@main
+        with:
+          preset: conventional-changelog-conventionalcommits

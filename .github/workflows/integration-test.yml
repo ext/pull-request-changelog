@@ -1,0 +1,35 @@
+name: Integration branches
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rebase-uptodate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch:
+          - ref: test/uptodate
+            depth: 0
+          - ref: test/behind
+            depth: 3
+    name: Rebase ${{ matrix.branch.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch.ref }}
+          ssh-key: ${{ secrets.INTEGRATION_TEST_KEY }}
+          fetch-depth: 0
+      - name: Set Git author
+        uses: fregante/setup-git-user@v2
+      - name: Determine merge-base
+        id: merge-base
+        run: echo "merge-base=$(git merge-base origin/${{ matrix.branch.ref }} origin/main)" >> $GITHUB_OUTPUT
+      - name: Rebase branch
+        run: git rebase --onto origin/main~${{ matrix.branch.depth }} ${{ steps.merge-base.outputs.merge-base }}
+      - name: Graph
+        run: git log --oneline --decorate --graph origin/main...${{ steps.merge-base.outputs.merge-base }}^ ${{ matrix.branch.ref }}...${{ steps.merge-base.outputs.merge-base }}^
+      - name: Push
+        run: git push --force-with-lease
