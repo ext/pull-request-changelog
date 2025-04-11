@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.3.1 (2025-04-11)
+
+### Bug Fixes
+
+- use merge-base to find common ancestor from target branch ([ddf02b8](https://github.com/ext/pull-request-changelog/commit/ddf02b8a51949b993a14920051ce87dc9161a221))
+
 ## 1.3.0 (2025-04-10)
 
 ### Features
