@@ -19,6 +19,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Asdf
+        run: npx pull-request-changelog --help
       - name: Pull Requst Changelog
         uses: ext/pull-request-changelog@main
         with:
