@@ -79,7 +79,7 @@
     "nano-spawn": "0.2.1",
     "npm-pkg-lint": "3.10.11",
     "prettier": "3.5.3",
-    "semver": "7.7.1",
+    "semver": "7.7.2",
     "typescript": "5.8.3",
     "yaml": "^2.7.1"
   },
