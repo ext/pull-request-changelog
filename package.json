@@ -57,7 +57,7 @@
     "stream-buffers": "3.0.3"
   },
   "devDependencies": {
-    "@html-validate/eslint-config": "6.3.0",
+    "@html-validate/eslint-config": "6.3.1",
     "@html-validate/eslint-config-typescript": "6.3.0",
     "@html-validate/eslint-config-typescript-typeinfo": "6.3.0",
     "@html-validate/jest-config": "3.12.1",
