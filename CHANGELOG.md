@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.4.0 (2025-05-26)
+
+### Features
+
+- **deps:** update dependency conventional-changelog to v7 ([99ea86f](https://github.com/ext/pull-request-changelog/commit/99ea86ffdc7d18383ae24ecc40f3ac76bd20a2cc))
+
 ## 1.3.1 (2025-04-11)
 
 ### Bug Fixes
