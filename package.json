@@ -48,7 +48,9 @@
     "preset": "@html-validate/jest-config"
   },
   "dependencies": {
-    "conventional-changelog": "^6.0.0",
+    "conventional-changelog": "^7.0.0",
+    "conventional-changelog-conventionalcommits": "^9.0.0",
+    "conventional-changelog-writer": "8.1.0",
     "conventional-commits-parser": "6.1.0",
     "git-raw-commits": "5.0.0",
     "handlebars": "^4.7.0",
@@ -88,6 +90,7 @@
   },
   "externalDependencies": [
     "conventional-changelog",
+    "conventional-changelog-conventionalcommits",
     "handlebars"
   ]
 }

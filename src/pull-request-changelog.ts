@@ -1,6 +1,8 @@
-/* eslint-disable-next-line n/no-extraneous-import -- only uses @types package */
-import type conventionalChangelogCore from "conventional-changelog-core";
-import { type Commit } from "conventional-commits-parser";
+import {
+	type Commit,
+	type ParserStreamOptions as ParserOptions,
+} from "conventional-commits-parser";
+import { type Options as WriterOptions } from "conventional-changelog-writer";
 import { defaultTemplates } from "./default-templates";
 import { getParsedCommits } from "./get-parsed-commits";
 import { getChangelog } from "./get-changelog";
@@ -11,8 +13,8 @@ import { renderTemplate } from "./render-template";
  */
 export interface PullRequestChangelogOptions {
 	config: {
-		parserOpts?: conventionalChangelogCore.ParserOptions;
-		writerOpts?: conventionalChangelogCore.WriterOptions;
+		parserOpts?: ParserOptions;
+		writerOpts?: WriterOptions;
 		whatBump(this: void, commits: Commit[]): { level: 0 | 1 | 2 };
 	};
 	git: {

@@ -1,4 +1,4 @@
-import conventionalChangelog from "conventional-changelog";
+import { ConventionalChangelog } from "conventional-changelog";
 import { WritableStreamBuffer } from "stream-buffers";
 
 /**
@@ -25,15 +25,12 @@ export function getChangelog(
 
 		const context = { linkReferences: false };
 
-		conventionalChangelog(
-			{
-				config,
-				outputUnreleased: true,
-			},
-			context,
-			git,
-			parserOpts,
-			writerOpts,
-		).pipe(stream);
+		const generator = new ConventionalChangelog()
+			.config(config)
+			.options({ outputUnreleased: true })
+			.context(context)
+			.commits(git, parserOpts)
+			.writer(writerOpts);
+		generator.writeStream().pipe(stream);
 	});
 }
