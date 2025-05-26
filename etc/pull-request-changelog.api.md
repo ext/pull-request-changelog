@@ -5,7 +5,8 @@
 ```ts
 
 import { Commit } from 'conventional-commits-parser';
-import type conventionalChangelogCore from 'conventional-changelog-core';
+import { Options } from 'conventional-changelog-writer';
+import { ParserStreamOptions } from 'conventional-commits-parser';
 
 // @public
 export function pullRequestChangelog(options: PullRequestChangelogOptions): Promise<string>;
@@ -14,8 +15,8 @@ export function pullRequestChangelog(options: PullRequestChangelogOptions): Prom
 export interface PullRequestChangelogOptions {
     // (undocumented)
     config: {
-        parserOpts?: conventionalChangelogCore.ParserOptions;
-        writerOpts?: conventionalChangelogCore.WriterOptions;
+        parserOpts?: ParserStreamOptions;
+        writerOpts?: Options;
         whatBump(this: void, commits: Commit[]): {
             level: 0 | 1 | 2;
         };
