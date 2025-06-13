@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.4.1 (2025-06-13)
+
+### Bug Fixes
+
+- **deps:** update dependency conventional-commits-parser to v6.2.0 ([1a587e1](https://github.com/ext/pull-request-changelog/commit/1a587e15191ab2cc43feb5b2901a588334375fdf))
+
 ## 1.4.0 (2025-05-26)
 
 ### Features
