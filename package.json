@@ -71,7 +71,7 @@
     "@tsconfig/strictest": "2.0.5",
     "@types/conventional-changelog": "6.0.0",
     "@types/conventional-changelog-core": "8.0.0",
-    "@types/jest": "29.5.14",
+    "@types/jest": "30.0.0",
     "@types/node": "22.15.32",
     "@types/stream-buffers": "3.0.7",
     "dedent": "1.6.0",
