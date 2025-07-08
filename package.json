@@ -75,7 +75,7 @@
     "@types/node": "22.16.0",
     "@types/stream-buffers": "3.0.7",
     "dedent": "1.6.0",
-    "esbuild": "0.25.5",
+    "esbuild": "0.25.6",
     "is-ci": "4.1.0",
     "jest": "30.0.4",
     "nano-spawn": "1.0.2",
