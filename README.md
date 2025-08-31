@@ -16,20 +16,40 @@ Features:
 Create a workflow with these steps:
 
 ```yaml
-- name: Checkout
-  uses: actions/checkout@v4
-  with:
-    ref: "${{ github.head_ref }}"
-- name: Setup Node.js
-  uses: actions/setup-node@v4
-  with:
-    node-version: 22.x
-- name: Pull Requst Changelog
-  uses: ext/pull-request-changelog@v1
+on:
+  pull_request:
+
+permissions:
+  pull-requests: write
+
+jobs:
+  pr-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ github.head_ref }}"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - run: npm ci
+      - name: Pull Requst Changelog
+        uses: ext/pull-request-changelog@v1
+        with:
+          preset: conventional-changelog-conventionalcommits
 ```
 
 > [!NOTE]
 > Node 22.x or later is required, make sure to specify `node-version`!
+
+If you want to only run for pull requests targeting certain branches add:
+
+```diff
+ on:
+   pull_request:
++    branches:
++      - main
+```
 
 ### Configuration
 
