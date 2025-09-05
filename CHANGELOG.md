@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.4.3 (2025-09-05)
+
+### Bug Fixes
+
+- **deps:** update dependency import-meta-resolve to v4.2.0 ([a2a251e](https://github.com/ext/pull-request-changelog/commit/a2a251efad0d497ef027e85b970b7a38d95043e6))
+
 ## 1.4.2 (2025-07-18)
 
 ### Bug Fixes
