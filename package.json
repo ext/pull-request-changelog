@@ -63,7 +63,7 @@
     "@html-validate/eslint-config-typescript": "6.6.1",
     "@html-validate/eslint-config-typescript-typeinfo": "6.6.1",
     "@html-validate/jest-config": "3.13.0",
-    "@html-validate/prettier-config": "3.0.9",
+    "@html-validate/prettier-config": "3.1.1",
     "@html-validate/release-scripts": "6.9.0",
     "@microsoft/api-extractor": "7.52.11",
     "@tsconfig/node22": "22.0.2",
