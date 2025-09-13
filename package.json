@@ -65,7 +65,7 @@
     "@html-validate/jest-config": "3.13.0",
     "@html-validate/prettier-config": "3.1.2",
     "@html-validate/release-scripts": "6.9.6",
-    "@microsoft/api-extractor": "7.52.11",
+    "@microsoft/api-extractor": "7.52.13",
     "@tsconfig/node22": "22.0.2",
     "@tsconfig/recommended": "1.0.10",
     "@tsconfig/strictest": "2.0.5",
