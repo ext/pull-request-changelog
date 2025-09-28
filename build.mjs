@@ -68,8 +68,8 @@ async function esbuild() {
 		external: pkg.externalDependencies,
 		banner: {
 			js: [
-				`import { createRequire } from "node:module";`,
-				`const require = createRequire(import.meta.url);`,
+				`import { createRequire as prRequestChangelogCreateRequire } from "node:module";`,
+				`const require = prRequestChangelogCreateRequire(import.meta.url);`,
 			].join("\n"),
 		},
 	});
