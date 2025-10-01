@@ -82,7 +82,7 @@
     "npm-pkg-lint": "4.1.1",
     "prettier": "3.6.2",
     "semver": "7.7.2",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "yaml": "^2.8.0"
   },
   "engines": {
