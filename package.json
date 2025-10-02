@@ -72,7 +72,7 @@
     "@types/conventional-changelog": "6.0.0",
     "@types/conventional-changelog-core": "8.0.0",
     "@types/jest": "30.0.0",
-    "@types/node": "22.18.7",
+    "@types/node": "22.18.8",
     "@types/stream-buffers": "3.0.7",
     "dedent": "1.7.0",
     "esbuild": "0.25.10",
