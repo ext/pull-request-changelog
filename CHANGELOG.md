@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.5.0 (2025-10-03)
+
+### Features
+
+- **deps:** update dependency meow to v14 ([4c3d947](https://github.com/ext/pull-request-changelog/commit/4c3d9475d3c77db42f7d9a839cf52ca3bf8e9404))
+
 ## 1.4.3 (2025-09-05)
 
 ### Bug Fixes
