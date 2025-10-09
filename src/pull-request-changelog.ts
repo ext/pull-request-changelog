@@ -1,11 +1,11 @@
+import { type Options as WriterOptions } from "conventional-changelog-writer";
 import {
 	type Commit,
 	type ParserStreamOptions as ParserOptions,
 } from "conventional-commits-parser";
-import { type Options as WriterOptions } from "conventional-changelog-writer";
 import { defaultTemplates } from "./default-templates";
-import { getParsedCommits } from "./get-parsed-commits";
 import { getChangelog } from "./get-changelog";
+import { getParsedCommits } from "./get-parsed-commits";
 import { renderTemplate } from "./render-template";
 
 /**

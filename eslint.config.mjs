@@ -4,6 +4,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import defaultConfig from "@html-validate/eslint-config";
+import jestConfig from "@html-validate/eslint-config-jest";
 import typescriptConfig from "@html-validate/eslint-config-typescript";
 import typescriptTypeinfoConfig from "@html-validate/eslint-config-typescript-typeinfo";
 
@@ -26,7 +27,7 @@ export default [
 
 	{
 		name: "@html-validate/eslint-config-typescript",
-		files: ["**/*.ts"],
+		files: ["**/*.{ts,cts,mts}"],
 		...typescriptConfig,
 	},
 
@@ -37,10 +38,17 @@ export default [
 		languageOptions: {
 			parserOptions: {
 				tsconfigRootDir: rootDir,
-				project: ["./tsconfig.json"],
+				projectService: true,
 			},
 		},
 		...typescriptTypeinfoConfig,
+	},
+
+	{
+		name: "@html-validate/eslint-config-jest",
+		files: ["**/*.spec.[jt]s"],
+		ignores: ["cypress/**", "tests/e2e/**"],
+		...jestConfig,
 	},
 
 	{
