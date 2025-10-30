@@ -68,7 +68,7 @@
     "@html-validate/release-scripts": "7.1.0",
     "@microsoft/api-extractor": "7.53.3",
     "@tsconfig/node22": "22.0.2",
-    "@tsconfig/recommended": "1.0.10",
+    "@tsconfig/recommended": "1.0.11",
     "@tsconfig/strictest": "2.0.6",
     "@types/conventional-changelog": "6.0.1",
     "@types/conventional-changelog-core": "8.0.1",
