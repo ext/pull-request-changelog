@@ -2,6 +2,9 @@ name: Pull Request Changelog
 
 on: [pull_request]
 
+permissions:
+  pull-requests: write
+
 jobs:
   pr-changelog:
     runs-on: ubuntu-latest
