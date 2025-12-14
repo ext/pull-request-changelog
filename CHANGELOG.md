@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.5.2 (2025-12-14)
+
+### Bug Fixes
+
+- **release:** no external changes ([267c596](https://github.com/ext/pull-request-changelog/commit/267c596eeddab00bfb73e1ef113c4f6f752457ab))
+
 ## 1.5.1 (2025-10-24)
 
 ### Bug Fixes

@@ -34,7 +34,7 @@ inputs:
     default: 100
   version:
     description: NPM script version (passed to npx). Default is to use same script version as action version.
-    default: 1.5.1
+    default: 1.5.2
   skip-install:
     description: Skip installing NPM package (you need to manually ensure the package exists)
     default: false
