@@ -84,7 +84,7 @@
     "is-ci": "4.1.0",
     "jest": "30.2.0",
     "nano-spawn": "2.0.0",
-    "npm-pkg-lint": "4.3.4",
+    "npm-pkg-lint": "4.3.5",
     "prettier": "3.8.1",
     "semver": "7.7.4",
     "typescript": "5.9.3",
