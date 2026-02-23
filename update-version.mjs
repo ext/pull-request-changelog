@@ -13,7 +13,7 @@ export async function updateActionVersion(cwd, version) {
 	const content = stringify(action, {
 		blockQuote: "literal",
 		lineWidth: 100,
-	}).replace(/^([a-z]+:)$/gm, "\n$1");
+	}).replaceAll(/^([a-z]+:)$/gm, "\n$1");
 	const options = await prettier.resolveConfig(filename);
 	const formatted = await prettier.format(content, {
 		...options,
