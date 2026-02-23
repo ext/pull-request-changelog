@@ -8,18 +8,18 @@ import { parse } from "yaml";
 
 const pkg = JSON.parse(await fs.readFile("package.json", "utf-8"));
 
+function formatParam([name, param]) {
+	if (name.startsWith("internal-")) {
+		return "";
+	}
+	return `${name} | ${param.default ? JSON.stringify(param.default) : ""} | ${param.description}`;
+}
+
 async function updateReadme() {
 	const readme = await fs.readFile("README.md", "utf-8");
 	const action = parse(await fs.readFile("action.yml", "utf-8"));
 
 	action.inputs.version.default = "auto";
-
-	function formatParam([name, param]) {
-		if (name.startsWith("internal-")) {
-			return "";
-		}
-		return `${name} | ${param.default ? JSON.stringify(param.default) : ""} | ${param.description}`;
-	}
 
 	const paramPreamble = "<!-- ACTION INPUTS BEGIN -->";
 	const paramPostamble = "<!-- ACTION INPUTS END -->";

@@ -1,14 +1,10 @@
 /* This file is managed by @html-validate/eslint-config */
 /* Changes may be overwritten */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import defaultConfig from "@html-validate/eslint-config";
 import jestConfig from "@html-validate/eslint-config-jest";
 import typescriptConfig from "@html-validate/eslint-config-typescript";
 import typescriptTypeinfoConfig from "@html-validate/eslint-config-typescript-typeinfo";
-
-const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 export default [
 	{
@@ -33,11 +29,11 @@ export default [
 
 	{
 		name: "@html-validate/eslint-config-typeinfo",
-		files: ["src/**/*.ts"],
+		files: ["src/**/*.{ts,cts,mts}"],
 		ignores: ["src/**/*.spec.ts"],
 		languageOptions: {
 			parserOptions: {
-				tsconfigRootDir: rootDir,
+				tsconfigRootDir: import.meta.dirname,
 				projectService: true,
 			},
 		},
@@ -49,13 +45,5 @@ export default [
 		files: ["**/*.spec.[jt]s"],
 		ignores: ["cypress/**", "tests/e2e/**"],
 		...jestConfig,
-	},
-
-	{
-		name: "local",
-		files: ["build.mjs", "bin/*.mjs"],
-		rules: {
-			"no-console": "off",
-		},
 	},
 ];
