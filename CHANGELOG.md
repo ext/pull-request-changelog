@@ -1,5 +1,13 @@
 # pull-request-changelog changelog
 
+## 1.5.3 (2026-03-06)
+
+### Bug Fixes
+
+- **deps:** update dependency conventional-changelog-writer to v8.3.0 ([a1f1806](https://github.com/ext/pull-request-changelog/commit/a1f1806b10451882e87099bf20e478fbe9c9e61a))
+- **deps:** update dependency conventional-commits-parser to v6.3.0 ([49c8bb3](https://github.com/ext/pull-request-changelog/commit/49c8bb3d2f0078552ec810a3a23c91cfa9d5152c))
+- **deps:** update dependency git-raw-commits to v5.0.1 ([ca8c82e](https://github.com/ext/pull-request-changelog/commit/ca8c82e49014066d63c6e7851da9174c1cd246aa))
+
 ## 1.5.2 (2025-12-14)
 
 ### Bug Fixes
