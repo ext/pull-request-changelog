@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.5.4 (2026-03-13)
+
+### Bug Fixes
+
+- **deps:** update dependency conventional-changelog-writer to v8.4.0 ([9fd9997](https://github.com/ext/pull-request-changelog/commit/9fd99975368b211308a626b1b452cef1de7cfd56))
+
 ## 1.5.3 (2026-03-06)
 
 ### Bug Fixes
