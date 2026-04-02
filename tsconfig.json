@@ -1,10 +1,12 @@
 {
   "extends": ["@tsconfig/recommended", "@tsconfig/node22", "@tsconfig/strictest"],
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "rootDir": "./src",
     "outDir": "./dist",
     "module": "esnext",
     "lib": ["esnext"],
+    "types": ["node", "jest"],
     "moduleResolution": "bundler",
     "emitDeclarationOnly": true,
     "declaration": true,
