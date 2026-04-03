@@ -6,7 +6,7 @@
     "outDir": "./dist",
     "module": "esnext",
     "lib": ["esnext"],
-    "types": ["node", "jest"],
+    "types": ["node"],
     "moduleResolution": "bundler",
     "emitDeclarationOnly": true,
     "declaration": true,

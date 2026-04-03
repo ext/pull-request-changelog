@@ -1,3 +1,4 @@
+import { expect, it } from "@jest/globals";
 import { defaultTemplates } from "./default-templates";
 import { renderTemplate } from "./render-template";
 
