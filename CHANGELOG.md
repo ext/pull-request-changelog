@@ -1,5 +1,12 @@
 # pull-request-changelog changelog
 
+## 1.5.5 (2026-04-03)
+
+### Bug Fixes
+
+- **deps:** update dependency conventional-commits-parser to v6.4.0 ([7e15dec](https://github.com/ext/pull-request-changelog/commit/7e15dec9b34e403ea841defbd4a9151e8469c57b))
+- **deps:** update dependency handlebars to v4.7.9 [security] ([a005f0f](https://github.com/ext/pull-request-changelog/commit/a005f0f3243083ca8ca4d7fda325935884591e18))
+
 ## 1.5.4 (2026-03-13)
 
 ### Bug Fixes
