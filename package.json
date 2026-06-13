@@ -80,7 +80,7 @@
     "@types/node": "22.19.20",
     "@types/stream-buffers": "3.0.8",
     "dedent": "1.7.2",
-    "esbuild": "0.28.0",
+    "esbuild": "0.28.1",
     "is-ci": "4.1.0",
     "jest": "30.4.2",
     "nano-spawn": "2.1.0",
