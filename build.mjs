@@ -23,7 +23,7 @@ async function updateReadme() {
 
 	const paramPreamble = "<!-- ACTION INPUTS BEGIN -->";
 	const paramPostamble = "<!-- ACTION INPUTS END -->";
-	const paramRegex = new RegExp(`(${paramPreamble})[^]*(${paramPostamble})`);
+	const paramRegex = new RegExp(`(${paramPreamble})[\\s\\S]*(${paramPostamble})`);
 	const paramTable = dedent`
 		<!-- prettier-ignore -->
 		Input&nbsp;parameter | Default | Description
@@ -33,7 +33,7 @@ async function updateReadme() {
 
 	const usagePreamble = "<!-- CLI USAGE BEGIN -->";
 	const usagePostamble = "<!-- CLI USAGE END -->";
-	const usageRegex = new RegExp(`(${usagePreamble})[^]*(${usagePostamble})`);
+	const usageRegex = new RegExp(`(${usagePreamble})[\\s\\S]*(${usagePostamble})`);
 	const output = await spawn("node", ["bin/pull-request-changelog.mjs", "--help"]);
 	const usage = dedent`
 		\`\`\`plaintext
