@@ -93,6 +93,11 @@
   "engines": {
     "node": "^22.16 || >= 24"
   },
+  "allowScripts": {
+    "esbuild": true,
+    "fsevents": false,
+    "unrs-resolver": true
+  },
   "externalDependencies": [
     "conventional-changelog",
     "conventional-changelog-conventionalcommits",
