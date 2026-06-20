@@ -25,7 +25,8 @@ export function getChangelog(
 
 		const context = { linkReferences: false };
 
-		const generator = new ConventionalChangelog()
+		const conventionalChangelog = new ConventionalChangelog();
+		const generator = conventionalChangelog
 			.config(config)
 			.options({ outputUnreleased: true })
 			.context(context)

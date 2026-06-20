@@ -23,18 +23,18 @@ export interface PullRequestChangelogOptions {
 	};
 	title?: string;
 	template?:
+		| undefined
 		| {
 				message?: string;
 				header?: string;
 				footer?: string;
-		  }
-		| undefined;
+		  };
 }
 
 const release = ["major", "minor", "patch"] as const;
 
 /**
- * Get conventional changelog for given git commit range.
+ * Get conventional changelog for given Git commit range.
  *
  * @public
  */
