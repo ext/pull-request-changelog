@@ -41,9 +41,11 @@ async function updateReadme() {
 		\`\`\`
 	`;
 
+	/* eslint-disable unicorn/no-unsafe-string-replacement -- technical debt */
 	const updated = readme
 		.replace(paramRegex, `$1\n\n${paramTable}\n\n$2`)
 		.replace(usageRegex, `$1\n\n${usage}\n\n$2`);
+	/* eslint-enable unicorn/no-unsafe-string-replacement */
 	if (readme !== updated) {
 		if (isCI) {
 			console.error("README.md not up-to-date, run build locally and add changes");

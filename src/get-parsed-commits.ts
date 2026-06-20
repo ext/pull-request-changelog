@@ -2,7 +2,7 @@ import { type Commit, type ParserStreamOptions, parseCommits } from "conventiona
 import { getRawCommits } from "git-raw-commits";
 
 /**
- * Get a list of commits between git ref `from` (exclusive) and `to` (inclusive).
+ * Get a list of commits between Git ref `from` (exclusive) and `to` (inclusive).
  *
  * @internal
  */

@@ -27,11 +27,11 @@ export interface PullRequestChangelogOptions {
         to: string;
     };
     // (undocumented)
-    template?: {
+    template?: undefined | {
         message?: string;
         header?: string;
         footer?: string;
-    } | undefined;
+    };
     // (undocumented)
     title?: string;
 }
