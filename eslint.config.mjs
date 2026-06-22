@@ -7,19 +7,7 @@ import typescriptConfig from "@html-validate/eslint-config-typescript";
 import typescriptTypeinfoConfig from "@html-validate/eslint-config-typescript-typeinfo";
 
 export default [
-	{
-		name: "Ignored files",
-		ignores: [
-			"**/coverage/**",
-			"**/dist/**",
-			"**/node_modules/**",
-			"**/out/**",
-			"**/public/assets/**",
-			"**/temp/**",
-		],
-	},
-
-	...defaultConfig,
+	...defaultConfig({ type: "module" }),
 
 	{
 		name: "@html-validate/eslint-config-typescript",
