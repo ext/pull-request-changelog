@@ -41,9 +41,10 @@ const release = ["major", "minor", "patch"] as const;
 export async function pullRequestChangelog(options: PullRequestChangelogOptions): Promise<string> {
 	const { config, git } = options;
 
+	const cwd = process.cwd();
 	const parserOpts = { ...config.parserOpts };
 	const writerOpts = { ...config.writerOpts, headerPartial: "", footerPartial: "" };
-	const parsedCommits = await getParsedCommits(git, parserOpts);
+	const parsedCommits = await getParsedCommits(cwd, git, parserOpts);
 	const bump = config.whatBump(parsedCommits);
 
 	const changelog = await getChangelog(git, config, parserOpts, writerOpts);
