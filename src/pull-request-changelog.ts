@@ -43,7 +43,7 @@ export async function pullRequestChangelog(options: PullRequestChangelogOptions)
 
 	const cwd = process.cwd();
 	const parserOpts = { ...config.parserOpts };
-	const writerOpts = { ...config.writerOpts, headerPartial: "", footerPartial: "" };
+	const writerOpts = { ...config.writerOpts, headerPartial: () => "", footerPartial: () => "" };
 	const parsedCommits = await getParsedCommits(cwd, git, parserOpts);
 	const bump = config.whatBump(parsedCommits);
 
