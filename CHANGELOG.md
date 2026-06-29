@@ -1,5 +1,11 @@
 # pull-request-changelog changelog
 
+## 1.6.0 (2026-06-29)
+
+### Features
+
+- **deps:** replace deprecated `git-raw-commits` with `@conventional-changelog/git-client` ([9e5d43e](https://github.com/ext/pull-request-changelog/commit/9e5d43eaf44dbd61852edd6ac05ddf826a6fb314))
+
 ## 1.5.5 (2026-04-03)
 
 ### Bug Fixes
