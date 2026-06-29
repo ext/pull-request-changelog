@@ -119,9 +119,7 @@ If you need to customize the configuration for the conventional-changelog preset
 import conventionalChangelogConventionalcommits from "conventionallchangelog-conventionalcommits";
 
 export default () => {
-  return conventionalChangelogConventionalcommits({
-    /* preset configuration */
-  });
+  return conventionalChangelogConventionalcommits({/* preset configuration */});
 };
 ```
 
@@ -140,9 +138,7 @@ import { pullRequestChangelog } from "pull-request-changelog";
 import conventionalChangelogConventionalcommits from "conventionallchangelog-conventionalcommits";
 
 const markdown = await pullRequestChangelog({
-  config: conventionalChangelogConventionalcommits({
-    /* preset configuration */
-  }),
+  config: conventionalChangelogConventionalcommits({/* preset configuration */}),
   git: {
     from: "origin/main",
     to: "HEAD",
