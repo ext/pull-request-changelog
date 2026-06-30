@@ -18,7 +18,7 @@ export interface TemplateData {
 	/** configured title */
 	title: string;
 	/** what version bump this would generate for the next release */
-	bump: "major" | "minor" | "patch";
+	bump: null | "major" | "minor" | "patch";
 }
 
 /**

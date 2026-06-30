@@ -15,7 +15,7 @@ export interface PullRequestChangelogOptions {
 	config: {
 		parserOpts?: ParserOptions;
 		writerOpts?: WriterOptions;
-		whatBump(this: void, commits: Commit[]): { level: 0 | 1 | 2 };
+		whatBump(this: void, commits: Commit[]): null | { level: 0 | 1 | 2 };
 	};
 	git: {
 		from: string;
@@ -57,6 +57,6 @@ export async function pullRequestChangelog(options: PullRequestChangelogOptions)
 	return renderTemplate(template, {
 		title: options.title ?? "CHANGELOG",
 		changelog,
-		bump: release[bump.level],
+		bump: bump ? release[bump.level] : null,
 	});
 }
