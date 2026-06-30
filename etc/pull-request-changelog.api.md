@@ -17,7 +17,7 @@ export interface PullRequestChangelogOptions {
     config: {
         parserOpts?: ParserStreamOptions;
         writerOpts?: Options;
-        whatBump(this: void, commits: Commit[]): {
+        whatBump(this: void, commits: Commit[]): null | {
             level: 0 | 1 | 2;
         };
     };
