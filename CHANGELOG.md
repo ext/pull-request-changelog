@@ -1,5 +1,7 @@
 # pull-request-changelog changelog
 
+## 1.7.0 (2026-07-03)
+
 ## 1.6.0 (2026-06-29)
 
 ### Features
