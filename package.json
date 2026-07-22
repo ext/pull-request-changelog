@@ -86,7 +86,7 @@
     "jest": "30.4.2",
     "nano-spawn": "2.1.0",
     "npm-pkg-lint": "5.2.0",
-    "prettier": "3.9.5",
+    "prettier": "3.9.6",
     "semver": "7.8.5",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "yaml": "^2.9.0"
