@@ -2,7 +2,7 @@ import { expect, it } from "@jest/globals";
 import { defaultTemplates } from "./default-templates";
 import { renderTemplate } from "./render-template";
 
-it("should render template with changelog", async () => {
+it("should render template with changelog", () => {
 	expect.assertions(1);
 	const changelog = [
 		"### Features",
@@ -15,7 +15,7 @@ it("should render template with changelog", async () => {
 		" * baz",
 		"",
 	].join("\n");
-	const output = await renderTemplate(defaultTemplates, {
+	const output = renderTemplate(defaultTemplates, {
 		changelog,
 		title: "CHANGELOG",
 		bump: "minor",
@@ -23,10 +23,10 @@ it("should render template with changelog", async () => {
 	expect(output).toMatchSnapshot();
 });
 
-it("should render template with no changelog", async () => {
+it("should render template with no changelog", () => {
 	expect.assertions(1);
 	const changelog = false;
-	const output = await renderTemplate(defaultTemplates, {
+	const output = renderTemplate(defaultTemplates, {
 		changelog,
 		title: "CHANGELOG",
 		bump: "minor",
