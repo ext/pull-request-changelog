@@ -95,6 +95,7 @@
     "node": "^22.16 || >= 24"
   },
   "allowScripts": {
+    "@parcel/watcher": false,
     "esbuild": true,
     "fsevents": false,
     "unrs-resolver": true
