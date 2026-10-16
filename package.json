@@ -47,6 +47,12 @@
     "pretest": "npm run prettier:check && npm run eslint",
     "test": "jest"
   },
+  "allowScripts": {
+    "@parcel/watcher": false,
+    "esbuild": true,
+    "fsevents": false,
+    "unrs-resolver": true
+  },
   "prettier": "@html-validate/prettier-config",
   "jest": {
     "preset": "@html-validate/jest-config"
@@ -68,7 +74,7 @@
     "@html-validate/eslint-config-typescript": "9.23.0",
     "@html-validate/eslint-config-typescript-typeinfo": "9.23.0",
     "@html-validate/jest-config": "3.18.2",
-    "@html-validate/prettier-config": "4.1.16",
+    "@html-validate/prettier-config": "4.1.17",
     "@html-validate/release-scripts": "7.6.16",
     "@jest/globals": "30.5.2",
     "@microsoft/api-extractor": "7.59.4",
@@ -93,12 +99,6 @@
   },
   "engines": {
     "node": "^22.16 || >= 24"
-  },
-  "allowScripts": {
-    "@parcel/watcher": false,
-    "esbuild": true,
-    "fsevents": false,
-    "unrs-resolver": true
   },
   "externalDependencies": [
     "conventional-changelog",
