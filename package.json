@@ -69,9 +69,9 @@
     "stream-buffers": "3.0.3"
   },
   "devDependencies": {
-    "@html-validate/eslint-config": "9.24.7",
+    "@html-validate/eslint-config": "9.24.9",
     "@html-validate/eslint-config-jest": "9.24.0",
-    "@html-validate/eslint-config-typescript": "9.24.2",
+    "@html-validate/eslint-config-typescript": "9.24.9",
     "@html-validate/eslint-config-typescript-typeinfo": "9.24.2",
     "@html-validate/jest-config": "3.18.3",
     "@html-validate/prettier-config": "4.1.17",
