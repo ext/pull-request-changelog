@@ -80,7 +80,7 @@
     "@microsoft/api-extractor": "7.60.1",
     "@tsconfig/node22": "22.0.7",
     "@tsconfig/recommended": "1.0.14",
-    "@tsconfig/strictest": "2.0.8",
+    "@tsconfig/strictest": "2.0.9",
     "@types/conventional-changelog": "6.0.1",
     "@types/conventional-changelog-core": "8.0.1",
     "@types/node": "22.20.5",
