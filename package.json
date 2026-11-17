@@ -57,6 +57,14 @@
   "jest": {
     "preset": "@html-validate/jest-config"
   },
+  "overrides": {
+    "@html-validate/eslint-config-typescript": {
+      "@typescript/native": "$@typescript/native"
+    },
+    "@html-validate/eslint-config-typescript-typeinfo": {
+      "@typescript/native": "$@typescript/native"
+    }
+  },
   "dependencies": {
     "@conventional-changelog/git-client": "3.2.0",
     "conventional-changelog": "^8.0.0",
@@ -71,8 +79,8 @@
   "devDependencies": {
     "@html-validate/eslint-config": "9.24.16",
     "@html-validate/eslint-config-jest": "9.24.17",
-    "@html-validate/eslint-config-typescript": "9.24.13",
-    "@html-validate/eslint-config-typescript-typeinfo": "9.24.13",
+    "@html-validate/eslint-config-typescript": "9.24.18",
+    "@html-validate/eslint-config-typescript-typeinfo": "9.24.18",
     "@html-validate/jest-config": "3.18.4",
     "@html-validate/prettier-config": "4.1.20",
     "@html-validate/release-scripts": "7.6.20",
